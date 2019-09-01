@@ -1,0 +1,22 @@
+group 'org.simonscode'
+version '1.0-SNAPSHOT'
+
+buildscript {
+    repositories {
+        mavenCentral()
+        maven { url "https://plugins.gradle.org/m2/" }
+    }
+    dependencies {
+        classpath "com.github.jengelman.gradle.plugins:shadow:2.0.1"
+    }
+}
+
+apply plugin: 'com.github.johnrengelman.shadow'
+apply plugin: 'application'
+apply plugin: 'java'
+
+mainClassName = 'org.simonscode.quickfiletransfer.Main'
+
+shadowJar {
+    baseName = 'QFT'
+}
